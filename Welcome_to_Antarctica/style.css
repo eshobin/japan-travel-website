@@ -1,0 +1,258 @@
+body {
+    background-color: var(--body-background);
+    color: var(--body-text-colour);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh; /* Make the content fill the page so the footer is at the bottom */
+    display: flex;
+    flex-direction: column;
+    font-family: var(--body-font);
+}
+
+main {
+    height: 100%;
+    justify-content: center;
+    margin: 0 auto; /* Center if the browser is really wide */
+    min-width: 25rem; /* Don't let the content get too narrow */
+    max-width: 70rem; /*  Don't let the content get too wide */
+    padding: 0;
+}
+
+section {
+    width: 95%;
+    text-align: center;
+    padding: 2.5% 2.5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+h1 {
+    width: 100%;
+}
+
+/* Nav bar */
+nav {
+    padding: 0 15px;
+    height: 60px;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--nav-colour);
+}
+
+/* Nav items */
+.nav-items {
+  display: flex;
+  gap: 100px;
+}
+
+
+/* Nav bar links */
+.nav-items > a {
+  color: var(--nav-items-colour);
+  text-decoration: none;
+  transition: .4s ease-in-out;
+}
+
+/* Nav links hover */
+.nav-items > a:hover {
+  color: var(--nav-items-active);
+}
+
+
+/* Nav links active */
+.nav-items .active {
+  color: var(--nav-items-active);
+  pointer-events: none;
+}
+
+
+/* Burger menu */
+.burger {
+  display: none;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--burger-colour);
+  margin-left: auto;
+}
+
+/* Hero image - homepage */
+.hero-image {
+  min-height: 50vh; /* 50% of the visible area of the page */
+  background-image: url('images/hero_pic.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Hero image - wildlife */
+.hero-image {
+  min-height: 50vh; /* 50% of the visible area of the page */
+  background-image: url('images/hero_pic.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Hero image - culture */
+.hero-image {
+  min-height: 50vh; /* 50% of the visible area of the page */
+  background-image: url('images/hero_pic.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Fact holder - homepage */
+.fact-holder {
+  display: grid;
+  height: 50vh;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 50% 50%;
+}
+
+/* Fact holder - wildlife */
+
+/* Fact card */
+.fact-card {
+  width: 100%;
+  display: flex;
+  background-size: cover;
+  background-position: center;
+}
+
+.fact {
+  font-size: 100%;
+  color: var(--fact-text-colour);
+  background-color: var(--fact-background);
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 0 5px 0 5px;
+  opacity: 0;
+  transition: .4s ease-in-out;  
+}
+
+/* Fact hover */
+.fact:hover {
+  opacity: 1;
+} 
+
+
+/* Fact images */
+
+.sun {
+  background-image: url("images/japan_map.png");
+}
+
+.discovery {
+  background-image: url("images/sun_goddess.png");
+}
+
+.explorers {
+  background-image: url("images/cherry_blossoms.png");
+}
+
+.ownership {
+  background-image: url("images/emperor.png");
+}
+
+.research {
+  background-image: url("images/snow_monkey.png");
+}
+
+.penguins {
+  background-image: url("images/spider_crabs.png");
+}
+
+.krill {
+  background-image: url("images/cranes.png");
+}
+
+.seals {
+  background-image: url("images/brown_bear.png");
+}
+
+.orcas {
+  background-image: url("images/origami.png");
+}
+
+.minke-whale {
+  background-image: url("images/temple.png");
+}
+
+.albatross {
+  background-image: url("images/writing.png");
+}
+
+.gentoo-penguin {
+  background-image: url("images/sumo_wrestling.png");
+}
+
+.temperature {
+  background-image: url("images/climate-snow.jpg");
+}
+
+.sunburn {
+  background-image: url("images/climate-sun.jpg");
+}
+
+.ice {
+  background-image: url("images/climate-ice.jpg");
+}
+
+.rainfall {
+  background-image: url("images/climate-rain.jpg");
+}
+
+/* Media query */
+@media screen and (max-width:768px) {
+
+  .burger {
+    display: flex;
+    cursor: pointer;
+  }
+
+  .burger #closeHam {
+    display: none;
+  }
+
+  .nav-items {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 58px;
+    background-color: var(--nav-colour);
+    width: 100%;
+    height: calc(100vh - 58px);
+    padding-top: 60px;
+    gap: 10vh;
+  }
+
+  .fact-holder {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-columns: 100%;
+  }
+
+  .fact-holder-wildlife {
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    height: 140vh;
+  }
+  .penguins {
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  .orcas {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+}
